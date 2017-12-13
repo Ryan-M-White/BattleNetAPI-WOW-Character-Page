@@ -14,8 +14,7 @@ app.use(express.static(__dirname + '/Source'));
 // });
 
 
-
-Listen on port 3000
+// Listen on port 3000
 app.listen(3000, function() {
     console.log("Launch successful. To access app, open your browser and insert the following URL into your address bar: http://localhost:3000/");
 });
