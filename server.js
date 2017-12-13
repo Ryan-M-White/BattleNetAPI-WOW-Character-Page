@@ -9,16 +9,16 @@ var jsonParser = bodyParser.json();
 const blizzard = require('blizzard.js').initialize({apikey: "6mm6ryqnawqzhqxceugnsbznu5b5u2m3"});
 app.use(express.static(__dirname + '/Source'));
 
-http.listen(process.env.PORT || 3000, function(){
-  console.log('listening on', http.address().port);
-});
-
-
-
-//Listen on port 3000
-// app.listen(3000, function() {
-//     console.log("Launch successful. To access app, open your browser and insert the following URL into your address bar: http://localhost:3000/");
+// http.listen(process.env.PORT || 3000, function(){
+//   console.log('listening on', http.address().port);
 // });
+
+
+
+Listen on port 3000
+app.listen(3000, function() {
+    console.log("Launch successful. To access app, open your browser and insert the following URL into your address bar: http://localhost:3000/");
+});
 
 //Deliver the page
 app.get('/', function (req, res) {
