@@ -1,0 +1,24 @@
+inputBoxes: #0B122F
+Input text: #BABDBE
+Placeholder text (selected): #BABDBE
+inputBox border (selected): #DFB069
+Placeholder text (unselected): #4A4E5A
+inputBox border (unselected): #877055
+
+Searchbutton background: #128880
+Searchbutton text: #ACC8C9
+
+Info Board background (transparent): #141A32 30%
+Info Sections (inner): #141A32
+Info Section (border): #4A4B54 (Note... edges are rounded)
+Stat headers: #FBEEE7
+Stat names: #AB802A
+Stat numbers: #D8CCC5
+
+Compare Stats/My Item Sets: #E8AB2E
+Item names/descriptions: #AB802A
+Item Costs: #D8CCC5
+
+Close button/X (static): #8E929D
+Close button/X lines (hover): #E8AB2E
+Close button (space): #128880

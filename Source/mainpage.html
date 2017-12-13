@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Home Test</title>
+    <link rel="stylesheet" href="mainpageStyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>    
+    <script src="mainpageController.js"></script>
+    
+</head>
+<body ng-app="eagledreamApp" ng-controller="mainpageController" ng-init="fetchAccessToken()">
+    <!-- logo -->
+    <div id="logo" class="centerWrapper">
+        <img id="logo" class="logo" src="img/TestAPICropped.png" alt="logo">
+    </div>
+
+    <!-- Inputs and Search Button -->
+    <form name="myForm" ng-submit="searchCharacter()">
+        <div id="search" class="centerWrapper">
+            <div id="searchArea" class="searchArea">
+            <input type="text" class="inputBox" name="charName" ng-model="charName" required placeholder="Character Name" />
+            <select class="selectBox" required ng-form="myForm" ng-model="selectedRealm" name="selectedRealm"  ng-options="realm.name for realm in realmList">
+                <option value="" class="realmPlaceholder" selected>Select Realm Name</option>
+            </select>
+            <button type="submit"  class="searchButton">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Character Information Board -->
+    <div id="infoBoard" class="infoBoard" ng-show="showBoard" alt="Container for Stats">
+        <div ng-click="closeInfoBoard()">
+            <span class="hexagon">X</span>
+        </div>
+        <!-- Character Stats -->
+        <div id="charBox" class="infoBox1">
+            <div id="attributeBox" class="infoBoxWrapper">
+                <h2>Attributes</h2>
+                <span class="statName">Strength</span>
+                <span class="statNumber">{{requestedCharacter.Attributes.strength}}</span><br>
+                <span class="statName">Agility</span>
+                <span class="statNumber">{{requestedCharacter.Attributes.agility}}</span><br>
+                <span class="statName">Intelligence</span>
+                <span class="statNumber">{{requestedCharacter.Attributes.intelligence}}</span><br>
+                <span class="statName">Stamina</span>
+                <span class="statNumber">{{requestedCharacter.Attributes.stamina}}</span><br>
+            </div>
+            <div id="defenseBox" class="infoBoxWrapper">
+                    <h2>Defense</h2>
+                    <span class="statName">Armor</span>
+                    <span class="statNumber">{{requestedCharacter.Defense.armor}}</span><br>
+                    <span class="statName">Dodge</span>
+                    <span class="statNumber">{{requestedCharacter.Defense.dodge}}%</span><br>
+                    <span class="statName">Parry</span>
+                    <span class="statNumber">{{requestedCharacter.Defense.parry}}%</span><br>
+                    <span class="statName">Block</span>
+                    <span class="statNumber">{{requestedCharacter.Defense.block}}%</span><br>
+            </div>
+            <div id="enhancementBox" class="infoBoxWrapper">
+                    <h2>Enhancements</h2>
+                    <span class="statName">Crit</span>
+                    <span class="statNumber">{{requestedCharacter.Enhancements.crit}}%</span><br>
+                    <span class="statName">Haste</span>
+                    <span class="statNumber">{{requestedCharacter.Enhancements.haste}}%</span><br>
+                    <span class="statName">Mastery</span>
+                    <span class="statNumber">{{requestedCharacter.Enhancements.mastery}}%</span><br>
+                    <span class="statName">Leech</span>
+                    <span class="statNumber">{{requestedCharacter.Enhancements.leech}}%</span><br>
+                    <span class="statName">Versatility</span>
+                    <span class="statNumber">{{requestedCharacter.Enhancements.versatility}}%</span><br>
+            </div>
+        </div>
+        <!-- Character Items -->
+        <div id="itemBox" class="infoBox2">
+            <div id="attributeBox" class="itemBoxWrapper">
+                <h2 style="color: rgb(218, 172, 47); font-size: 100%">My Item Sets</h2>
+                <div id="itemSpots" class="itemName">
+                    <br>
+                    Helm<br>
+                    Chest<br>
+                    Shoulders<br>
+                    Legs<br>
+                    Feet<br>
+                    Trinket<br>
+                    Back<br>
+                </div>
+                <div id="itemNames" class="itemTitles">
+                    <br>
+                    {{requestedCharacter.Items.helm.name}}<br>
+                    {{requestedCharacter.Items.chest.name}}<br>
+                    {{requestedCharacter.Items.shoulders.name}}<br>
+                    {{requestedCharacter.Items.legs.name}}<br>     
+                    {{requestedCharacter.Items.feet.name}}<br>            
+                    {{requestedCharacter.Items.trinket.name}}<br>           
+                    {{requestedCharacter.Items.back.name}}<br>
+                </div>    
+                <div id="levelRequired" class="itemStat_lvlreq">
+                    <h2 style="color: rgb(218, 172, 47); width: 20%; font-size: 100%">Level</h2>
+                    {{requestedCharacter.Items.helm.requiredLevel}}<br>
+                    {{requestedCharacter.Items.chest.requiredLevel}}<br>
+                    {{requestedCharacter.Items.shoulders.requiredLevel}}<br>
+                    {{requestedCharacter.Items.legs.requiredLevel}}<br>     
+                    {{requestedCharacter.Items.feet.requiredLevel}}<br>            
+                    {{requestedCharacter.Items.trinket.requiredLevel}}<br>           
+                    {{requestedCharacter.Items.back.requiredLevel}}<br>
+                </div>    
+                <div id="buyPrices" class="itemStat_buy">
+                    <h2 style="color: rgb(218, 172, 47); width: 90%; font-size: 100%; text-align: center;">Buy</h2>
+                    {{requestedCharacter.Items.helm.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                    {{requestedCharacter.Items.chest.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                    {{requestedCharacter.Items.shoulders.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                    {{requestedCharacter.Items.legs.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>     
+                    {{requestedCharacter.Items.feet.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>            
+                    {{requestedCharacter.Items.trinket.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>           
+                    {{requestedCharacter.Items.back.buyPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                </div>    
+                <div id="buyPrices" class="itemStat_sell">
+                    <h2 style="color: rgb(218, 172, 47); width: 90%; font-size: 100%; text-align: center;">Sell</h2>
+                    {{requestedCharacter.Items.helm.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                    {{requestedCharacter.Items.chest.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                    {{requestedCharacter.Items.shoulders.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                    {{requestedCharacter.Items.legs.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>     
+                    {{requestedCharacter.Items.feet.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>            
+                    {{requestedCharacter.Items.trinket.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>           
+                    {{requestedCharacter.Items.back.sellPrice}} <img src="https://png.icons8.com/coins/color/10/000000"><br>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

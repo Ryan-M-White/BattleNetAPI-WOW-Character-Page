@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Asap');
+@font-face {
+    font-family: Droid-sans;
+    src: url(Droid-sans/DroidSans.ttf);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body { 
+	background: url("img/Test API itemless.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+h2 {
+    font-size: 85%;
+    font-family: Roboto Condensed, Asap, Droid Sans, Times New Roman;    
+    color: #FBEEE7;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 4%;    
+}
+
+.centerWrapper {
+	text-align: center;
+}
+
+.logo {
+	height: 46px;
+}
+
+.searchArea{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0.8%;
+    height: 125px;
+    width: 340px;
+}
+
+input.inputBox {
+	background-color: #0B122F;
+	border-color: #877055;
+	color: #BABDBE;
+	margin: 5px 0px;
+	padding: 5px 10px 5px 10px;
+	width: 72%;
+}
+
+input.inputBox:focus {
+	border-color: #DFB069;
+}
+
+select.selectBox {
+	background-color: #0B122F;
+	border-color: #877055;
+	color: #4A4E5A;
+	margin: 5px 0px;
+	padding: 5px 10px 5px 10px;
+	width: 79%;
+}
+
+select.selectBox:focus {
+	border-color: #DFB069;
+	outline-style:none;
+	box-shadow: none;
+	color: #BABDBE;
+}
+
+select.ng-dirty{
+	color: #BABDBE;
+}
+
+option:first-child {
+    color: #4A4E5A;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: #BABDBE;
+}
+
+::placeholder {
+    color: #4A4E5A;
+    opacity: 1;
+}
+
+button.searchButton {
+    text-align: center;
+    width: 79%;
+    background-color: #128880;
+    color:#ACC8C9;
+    border: none;
+    margin-top: 5px;
+    height: 22%;
+}
+
+button.searchButton:hover {
+    background-color: #E8AB2E;;
+    cursor:pointer;
+}
+
+button.searchButton:active {
+    background-color: #134b58;
+    box-shadow: 0 5px rgb(102, 102, 102);
+    transform: translateY(4px);
+}
+
+.infoBoard {
+	margin-top: 3%;
+	height: 350px;
+	width: 100%;
+	background-color: rgba(20,26,50,0.7);
+}
+
+
+.infoBox1 {
+    float: left;
+    height: 72%;
+    width: 47%;
+    background-color: #151c3a;
+    border: solid;
+    border-radius: 25px;
+    border-color: #4A4B54;
+    border-width: 1.4px;
+    padding-top: 2%;
+    padding-right: 1%;
+    padding-bottom: 2%;
+    padding-left: 2%;    
+    margin-top: 2.5%;
+    margin-left: 7%;
+    margin-bottom: 2%;
+}
+
+.infoBox2 {
+    float: right;
+    height: 72%;
+    width: 29%;
+    background-color: #151c3a;
+    border: solid;
+    border-radius: 25px;
+    border-color: #4A4B54;
+    border-width: 1.4px;
+    padding: 20px;
+    margin-top: 2.5%;
+    margin-right: 9%;
+    margin-bottom: 2%;
+}
+
+.infoBoxWrapper {
+    float: left;
+    margin-left: 1%;
+    margin-right: 2.33%;
+    height: 30%;
+    width: 30%;
+}
+
+.itemBoxWrapper {
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 100%;
+    width: 100%;
+}
+
+.statName {
+    float: left;
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #AB802A;
+}
+
+.itemName {
+    float: left;
+    width: 15%;
+    margin-right: 3%;
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #AB802A;
+}
+
+.itemStat_lvlreq {
+    text-align: right;
+    float: left;
+    width: 6%;
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #D8CCC5;
+}
+
+.itemStat_buy {
+    text-align: right;
+    float: left;
+    width: 15%;
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #D8CCC5;
+    margin-left: 4%;
+    margin-right: 1%;
+}
+
+.itemStat_sell {
+    text-align: right;
+    float: left;
+    width: 15%;
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #D8CCC5;
+}
+
+.itemTitles {
+    float: left;
+    width: 41%;
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #AB802A;
+}
+
+.statNumber {
+    float: right; 
+    font-size: 73%;
+    font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+    color: #D8CCC5;
+}
+
+.hexagon {
+    color: #8E929D;
+    float: right;
+    width: 123px;
+    height: 0px;
+    line-height: 100px;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hexagon:before {
+    float: right;
+    content: "\2B21";
+    font-size: 70px;
+    color: #8E929D;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.hexagon:hover {
+    color: #E8AB2E;
+    cursor:pointer
+}
+
+.hexagon:hover:before {
+    color: #E8AB2E;
+    cursor:pointer
+ }
+
+ .hexagon:active {
+    background-color: #134b58;
+    box-shadow: 0 5px rgb(18, 136, 128);
+    transform: translateY(4px);
+}
+
+/* Smartphones */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .logo {
+        height: 46px;
+        margin-top: 4%;
+        margin-bottom: 1%;
+    }
+    
+    .searchArea{
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0.8%;
+        margin-bottom: 20%;
+        width: 37%;
+    }
+    
+    input.inputBox {
+        text-align: left;
+        font-size: 17pt;
+        background-color: #0B122F;
+        border-color: #877055;
+        color: #BABDBE;
+        margin: 8px 0px;
+        padding: 25px 20px;
+        width: 72%;
+    }
+
+    select.selectBox {
+        text-align: center;
+        font-size: 17pt;
+        background-color: #0B122F;
+        border-color: #877055;
+        color: #4A4E5A;
+        margin: 8px 0px;
+        padding: 25px 20px;
+        width: 86%;
+    }
+
+    button.searchButton {
+        text-align: center;
+        font-size: 34px;
+        width: 85%;
+        background-color: #128880;
+        color: #ACC8C9;
+        border: none;
+        margin-top: 5px;
+        height: 64%;
+    }
+
+    .infoBoard {
+        width: 100%;
+        background-color: rgba(20,26,50,0.7);
+        display: inline-block;
+        margin: auto;
+        height: 75%;
+    }
+
+    .infoBox1 { 
+        float: none;
+        margin: 5% 5%;
+        width: auto;
+        height: 47%;
+    }
+
+   .infoBox2 { 
+        float: none;
+        margin: 4% 5%;
+        width: auto;        
+        height: 36%;
+    }
+
+    .infoBoxWrapper {
+        margin-left:auto;
+        margin-right:auto;
+        height:auto;
+        width:auto; 
+    }
+    
+    .statName {
+        float: left;
+        margin-right: 5%;
+        font-size: 73%;
+        font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+        color: #AB802A;
+    }
+    
+    .statNumber {
+        float: right; 
+        font-size: 73%;
+        font-family: Roboto Condensed, Asap, Droid-Sans, Times New Roman;
+        color: #D8CCC5;
+    }
+}
+
+/* iPads */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .logo {
+        height: 46px;
+        margin-top: 4%;
+        margin-bottom: 1%;
+    }
+    
+    .searchArea{
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0.8%;
+        margin-bottom: 20%;
+        width: 37%;
+    }
+    
+    input.inputBox {
+        text-align: left;
+        font-size: 17pt;
+        background-color: #0B122F;
+        border-color: #877055;
+        color: #BABDBE;
+        margin: 8px 0px;
+        padding: 25px 20px;
+        width: 72%;
+    }
+
+    select.selectBox {
+        text-align: center;
+        font-size: 17pt;
+        background-color: #0B122F;
+        border-color: #877055;
+        color: #4A4E5A;
+        margin: 8px 0px;
+        padding: 25px 20px;
+        width: 86%;
+    }
+
+    button.searchButton {
+        text-align: center;
+        font-size: 34px;
+        width: 85%;
+        background-color: #128880;
+        color: #ACC8C9;
+        border: none;
+        margin-top: 5px;
+        height: 64%;
+    }
+
+    .infoBoard {
+        width: 100%;
+        background-color: rgba(20,26,50,0.7);
+        display: inline-block;
+        padding-bottom: 67%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        height: 75%;
+    }
+
+    .infoBox1 { 
+        float: none;
+        margin: 5% 5%;
+        width: auto;
+    }
+
+   .infoBox2 { 
+        float: none;
+        margin: 0% 5%;
+        width: auto;
+    }
+
+}
+
+/* Resized laptop window */
+@media only screen and (max-width: 1100px) {
+    .logo {
+        height: 46px;
+        margin-top: 4%;
+        margin-bottom: 1%;
+    }
+
+    .infoBoard {
+        width: 100%;
+        background-color: rgba(20,26,50,0.7);
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        height: 75%;
+    }
+
+    .infoBox1 { 
+        float: none;
+        margin: 5% 5%;
+        width: auto;
+    }
+
+   .infoBox2 { 
+        float: none;
+        margin: 0% 5%;
+        width: auto;
+    }
+}
+
